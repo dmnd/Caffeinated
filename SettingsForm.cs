@@ -46,25 +46,22 @@ namespace Caffeinated {
             }
         }
 
-        string GetShortcutPath(IWshRuntimeLibrary.WshShell shell = null) {
+        static string GetShortcutPath(ReflectedShell shell = null) {
             if (shell == null) {
-                shell = new IWshRuntimeLibrary.WshShell();
+                shell = new ReflectedShell();
             }
-            var startup = (string)shell.SpecialFolders.Item("Startup");
+            var startup = shell.GetSpecialFolder("Startup");
             return Path.Combine(startup, "Caffeinated.lnk");
         }
 
         private void StartupChkBox_CheckedChanged(object sender, EventArgs e) {
-            var shell = new IWshRuntimeLibrary.WshShell();
+            var shell = new ReflectedShell();
             var shortcut = GetShortcutPath(shell);
             var executable = Assembly.GetExecutingAssembly()
                                      .GetName().CodeBase;
             if (StartupChkBox.Checked) {
                 // create shortcut in startup items folder in start menu
-                object objLink = shell.CreateShortcut(shortcut);
-                var link = (IWshRuntimeLibrary.IWshShortcut)objLink;
-                link.TargetPath = executable;
-                link.Save();
+                shell.CreateShortcut(shortcut, executable);
             }
             else {
                 // remove shortcut if it exists

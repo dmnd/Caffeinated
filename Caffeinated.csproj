@@ -60,6 +60,7 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReflectedShell.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
@@ -99,27 +100,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="IWshRuntimeLibrary">
-      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cup-coffee-icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cup-coffee-icon-bw.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cup-coffee-icon-128.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cup-coffee-icon-48.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cup-coffee-icon-64.png" />
