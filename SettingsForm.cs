@@ -7,9 +7,9 @@ using System.Windows.Forms;
 using Caffeinated.Properties;
 
 namespace Caffeinated {
-    public partial class SettingsForm : Form {
+    public partial class SettingsForm : BaseForm {
         BindingList<Duration> Durations;
-        public SettingsForm() {
+        public SettingsForm() : base() {
             InitializeComponent();
             var durations = from i in Settings.Default.RealDurations
                             select new Duration { Minutes = i };

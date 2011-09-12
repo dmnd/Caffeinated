@@ -51,6 +51,7 @@ namespace Caffeinated {
         private uint? oldState = null;
         private Timer timer;
         private SettingsForm settingsForm = null;
+        private AboutForm aboutForm = null;
 
         [STAThread]
         static void Main() {
@@ -89,11 +90,15 @@ namespace Caffeinated {
             var settingsItem = new MenuItem("&Settings...");
             settingsItem.Click += new EventHandler(settingsItem_Click);
 
+            var aboutItem = new MenuItem("&About...");
+            aboutItem.Click += new EventHandler(aboutItem_Click);
+
             contextMenu.MenuItems.AddRange(
                 new MenuItem[] { 
                     activateForItem, 
                     new MenuItem("-"),
                     settingsItem,
+                    aboutItem,
                     exitItem
                 }
             );
@@ -126,6 +131,11 @@ namespace Caffeinated {
             if (Settings.Default.ShowSettingsAtLaunch) {
                 showSettings();
             }
+        }
+
+        void aboutItem_Click(object sender, EventArgs e) {
+            aboutForm = new AboutForm();
+            aboutForm.Show();
         }
 
         void settingsItem_Click(object sender, EventArgs e) {
@@ -179,6 +189,7 @@ namespace Caffeinated {
                 this.timer.Start();
             }
             this.notifyIcon.Icon = onIcon;
+            this.notifyIcon.Text = "Caffeinated: active";
         }
 
         void deactivate() {
@@ -191,6 +202,7 @@ namespace Caffeinated {
                 }
             }
             this.notifyIcon.Icon = offIcon;
+            this.notifyIcon.Text = "Caffeinated: inactive";
         }
 
         private void exitItem_Click(object Sender, EventArgs e) {

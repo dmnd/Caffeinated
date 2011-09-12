@@ -67,16 +67,16 @@ namespace Caffeinated.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap cup_coffee_icon_128 {
+        internal static System.Drawing.Bitmap cup_coffee_icon_64 {
             get {
-                object obj = ResourceManager.GetObject("cup_coffee_icon_128", resourceCulture);
+                object obj = ResourceManager.GetObject("cup_coffee_icon_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap cup_coffee_icon_48 {
+        internal static System.Drawing.Bitmap cup_coffee_icon_96 {
             get {
-                object obj = ResourceManager.GetObject("cup_coffee_icon_48", resourceCulture);
+                object obj = ResourceManager.GetObject("cup_coffee_icon_96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
