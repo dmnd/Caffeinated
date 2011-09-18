@@ -49,7 +49,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(127, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 41);
@@ -59,7 +59,7 @@
             // DefaultDurationBox
             // 
             this.DefaultDurationBox.FormattingEnabled = true;
-            this.DefaultDurationBox.Location = new System.Drawing.Point(229, 190);
+            this.DefaultDurationBox.Location = new System.Drawing.Point(229, 194);
             this.DefaultDurationBox.Name = "DefaultDurationBox";
             this.DefaultDurationBox.Size = new System.Drawing.Size(140, 23);
             this.DefaultDurationBox.TabIndex = 5;
@@ -68,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 193);
+            this.label3.Location = new System.Drawing.Point(127, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 15);
             this.label3.TabIndex = 6;
@@ -80,7 +80,7 @@
             this.SettingsAtLaunchChkBox.Checked = global::Caffeinated.Properties.Settings.Default.ShowSettingsAtLaunch;
             this.SettingsAtLaunchChkBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.SettingsAtLaunchChkBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Caffeinated.Properties.Settings.Default, "ShowSettingsAtLaunch", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.SettingsAtLaunchChkBox.Location = new System.Drawing.Point(130, 165);
+            this.SettingsAtLaunchChkBox.Location = new System.Drawing.Point(130, 169);
             this.SettingsAtLaunchChkBox.Name = "SettingsAtLaunchChkBox";
             this.SettingsAtLaunchChkBox.Size = new System.Drawing.Size(196, 19);
             this.SettingsAtLaunchChkBox.TabIndex = 4;
@@ -92,7 +92,7 @@
             this.ActivateChkBox.AutoSize = true;
             this.ActivateChkBox.Checked = global::Caffeinated.Properties.Settings.Default.ActivateAtLaunch;
             this.ActivateChkBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Caffeinated.Properties.Settings.Default, "ActivateAtLaunch", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ActivateChkBox.Location = new System.Drawing.Point(130, 140);
+            this.ActivateChkBox.Location = new System.Drawing.Point(130, 144);
             this.ActivateChkBox.Name = "ActivateChkBox";
             this.ActivateChkBox.Size = new System.Drawing.Size(139, 19);
             this.ActivateChkBox.TabIndex = 3;
@@ -102,7 +102,7 @@
             // StartupChkBox
             // 
             this.StartupChkBox.AutoSize = true;
-            this.StartupChkBox.Location = new System.Drawing.Point(130, 115);
+            this.StartupChkBox.Location = new System.Drawing.Point(130, 119);
             this.StartupChkBox.Name = "StartupChkBox";
             this.StartupChkBox.Size = new System.Drawing.Size(244, 19);
             this.StartupChkBox.TabIndex = 2;
