@@ -41,15 +41,16 @@
             // 
             this.label1.Location = new System.Drawing.Point(127, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 55);
+            this.label1.Size = new System.Drawing.Size(317, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "Caffeinated is now running. You can find its icon in the notification area near t" +
-                "he clock. Click it to disable automatic sleep, and click it again to go back.";
+                "he clock. Click it to keep your PC awake by disabling automatic sleep. Click the" +
+                " icon again to allow automatic sleep.";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 67);
+            this.label2.Location = new System.Drawing.Point(127, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 41);
             this.label2.TabIndex = 1;
@@ -58,7 +59,7 @@
             // DefaultDurationBox
             // 
             this.DefaultDurationBox.FormattingEnabled = true;
-            this.DefaultDurationBox.Location = new System.Drawing.Point(229, 178);
+            this.DefaultDurationBox.Location = new System.Drawing.Point(229, 190);
             this.DefaultDurationBox.Name = "DefaultDurationBox";
             this.DefaultDurationBox.Size = new System.Drawing.Size(140, 23);
             this.DefaultDurationBox.TabIndex = 5;
@@ -67,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 181);
+            this.label3.Location = new System.Drawing.Point(127, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 15);
             this.label3.TabIndex = 6;
@@ -79,7 +80,7 @@
             this.SettingsAtLaunchChkBox.Checked = global::Caffeinated.Properties.Settings.Default.ShowSettingsAtLaunch;
             this.SettingsAtLaunchChkBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.SettingsAtLaunchChkBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Caffeinated.Properties.Settings.Default, "ShowSettingsAtLaunch", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.SettingsAtLaunchChkBox.Location = new System.Drawing.Point(130, 153);
+            this.SettingsAtLaunchChkBox.Location = new System.Drawing.Point(130, 165);
             this.SettingsAtLaunchChkBox.Name = "SettingsAtLaunchChkBox";
             this.SettingsAtLaunchChkBox.Size = new System.Drawing.Size(196, 19);
             this.SettingsAtLaunchChkBox.TabIndex = 4;
@@ -91,7 +92,7 @@
             this.ActivateChkBox.AutoSize = true;
             this.ActivateChkBox.Checked = global::Caffeinated.Properties.Settings.Default.ActivateAtLaunch;
             this.ActivateChkBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Caffeinated.Properties.Settings.Default, "ActivateAtLaunch", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ActivateChkBox.Location = new System.Drawing.Point(130, 128);
+            this.ActivateChkBox.Location = new System.Drawing.Point(130, 140);
             this.ActivateChkBox.Name = "ActivateChkBox";
             this.ActivateChkBox.Size = new System.Drawing.Size(139, 19);
             this.ActivateChkBox.TabIndex = 3;
@@ -101,7 +102,7 @@
             // StartupChkBox
             // 
             this.StartupChkBox.AutoSize = true;
-            this.StartupChkBox.Location = new System.Drawing.Point(130, 103);
+            this.StartupChkBox.Location = new System.Drawing.Point(130, 115);
             this.StartupChkBox.Name = "StartupChkBox";
             this.StartupChkBox.Size = new System.Drawing.Size(244, 19);
             this.StartupChkBox.TabIndex = 2;
@@ -112,7 +113,7 @@
             // okBtn
             // 
             this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.okBtn.Location = new System.Drawing.Point(263, 211);
+            this.okBtn.Location = new System.Drawing.Point(263, 227);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(87, 27);
             this.okBtn.TabIndex = 8;
@@ -124,7 +125,7 @@
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cancelBtn.Location = new System.Drawing.Point(357, 211);
+            this.cancelBtn.Location = new System.Drawing.Point(357, 227);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(87, 27);
             this.cancelBtn.TabIndex = 9;
@@ -147,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(456, 250);
+            this.ClientSize = new System.Drawing.Size(456, 266);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);

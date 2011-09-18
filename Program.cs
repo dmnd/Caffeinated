@@ -79,7 +79,7 @@ namespace Caffeinated {
                 sortedTimes = times.OrderByDescending(i => i);
             }
 
-            var activateForItem = new MenuItem("&Activate for");
+            var activateForItem = new MenuItem("&Stay awake for");
             foreach (var time in sortedTimes) {
                 var item = new MenuItem(Duration.ToDescription(time));
                 item.Tag = time; 
@@ -189,7 +189,7 @@ namespace Caffeinated {
                 this.timer.Start();
             }
             this.notifyIcon.Icon = onIcon;
-            this.notifyIcon.Text = "Caffeinated: active";
+            this.notifyIcon.Text = "Caffeinated: sleep not allowed!";
         }
 
         void deactivate() {
@@ -202,7 +202,7 @@ namespace Caffeinated {
                 }
             }
             this.notifyIcon.Icon = offIcon;
-            this.notifyIcon.Text = "Caffeinated: inactive";
+            this.notifyIcon.Text = "Caffeinated: sleep allowed";
         }
 
         private void exitItem_Click(object Sender, EventArgs e) {
