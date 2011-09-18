@@ -41,6 +41,7 @@ namespace Caffeinated {
         public static extern uint SetThreadExecutionState(uint esFlags);
         public const uint ES_CONTINUOUS = 0x80000000;
         public const uint ES_SYSTEM_REQUIRED = 0x00000001;
+        public const uint ES_DISPLAY_REQUIRED = 0x00000002;
     }
 
     public class AppContext : ApplicationContext {
@@ -178,7 +179,7 @@ namespace Caffeinated {
 
         void activate(int duration) {
             var sleepDisabled = NativeMethods.ES_CONTINUOUS |
-                                NativeMethods.ES_SYSTEM_REQUIRED;
+                                NativeMethods.ES_DISPLAY_REQUIRED;
             oldState = NativeMethods.SetThreadExecutionState(sleepDisabled);
             if (oldState == 0) {
                 ShowError();
