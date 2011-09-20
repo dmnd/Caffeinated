@@ -85,7 +85,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.caffeineLbl.AutoSize = true;
             this.caffeineLbl.LinkArea = new System.Windows.Forms.LinkArea(12, 17);
-            this.caffeineLbl.Location = new System.Drawing.Point(26, 177);
+            this.caffeineLbl.Location = new System.Drawing.Point(31, 177);
             this.caffeineLbl.Name = "caffeineLbl";
             this.caffeineLbl.Size = new System.Drawing.Size(164, 21);
             this.caffeineLbl.TabIndex = 18;
@@ -100,13 +100,13 @@
             this.visualpharmaLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.visualpharmaLbl.AutoSize = true;
-            this.visualpharmaLbl.LinkArea = new System.Windows.Forms.LinkArea(9, 12);
-            this.visualpharmaLbl.Location = new System.Drawing.Point(45, 196);
+            this.visualpharmaLbl.LinkArea = new System.Windows.Forms.LinkArea(9, 11);
+            this.visualpharmaLbl.Location = new System.Drawing.Point(52, 194);
             this.visualpharmaLbl.Name = "visualpharmaLbl";
-            this.visualpharmaLbl.Size = new System.Drawing.Size(129, 21);
+            this.visualpharmaLbl.Size = new System.Drawing.Size(123, 21);
             this.visualpharmaLbl.TabIndex = 19;
             this.visualpharmaLbl.TabStop = true;
-            this.visualpharmaLbl.Text = "Icons by VisualPharma.";
+            this.visualpharmaLbl.Text = "Icons by VisualPharm.";
             this.visualpharmaLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.visualpharmaLbl.UseCompatibleTextRendering = true;
             this.visualpharmaLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLbl_LinkClicked);
@@ -145,7 +145,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AboutForm Caffeinated";
+            this.Text = "About Caffeinated";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
