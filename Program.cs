@@ -179,7 +179,13 @@ namespace Caffeinated {
 
         void activate(int duration) {
             var sleepDisabled = NativeMethods.ES_CONTINUOUS |
-                                NativeMethods.ES_DISPLAY_REQUIRED;
+                                NativeMethods.ES_SYSTEM_REQUIRED;
+
+            if (Settings.Default.KeepMonitorOn)
+            {
+                sleepDisabled |= NativeMethods.ES_DISPLAY_REQUIRED;
+            }
+
             oldState = NativeMethods.SetThreadExecutionState(sleepDisabled);
             if (oldState == 0) {
                 ShowError();

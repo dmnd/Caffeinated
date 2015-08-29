@@ -14,5 +14,8 @@
     <Setting Name="Durations" Type="System.String" Scope="User">
       <Value Profile="(Default)">0,5,10,15,30,60,180,300</Value>
     </Setting>
+    <Setting Name="KeepMonitorOn" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
