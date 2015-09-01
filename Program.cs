@@ -180,8 +180,7 @@ namespace Caffeinated {
             var sleepDisabled = NativeMethods.ES_CONTINUOUS |
                                 NativeMethods.ES_SYSTEM_REQUIRED;
 
-            if (Settings.Default.KeepMonitorOn)
-            {
+            if (Settings.Default.KeepMonitorOn) {
                 sleepDisabled |= NativeMethods.ES_DISPLAY_REQUIRED;
             }
 
@@ -202,8 +201,7 @@ namespace Caffeinated {
         {
             timer.Stop();
             uint result = NativeMethods.SetThreadExecutionState(NativeMethods.ES_CONTINUOUS);
-            if (result == 0)
-            {
+            if (result == 0) {
                 ShowError();
             }
             this.notifyIcon.Icon = offIcon;
