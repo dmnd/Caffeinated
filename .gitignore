@@ -2,3 +2,5 @@ obj
 bin
 *.user
 *.suo
+/.vs/Caffeinated/v15/Server/sqlite3
+/.vs
