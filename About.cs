@@ -15,6 +15,10 @@ namespace Caffeinated {
                 "http://lightheadsw.com/caffeine/";
             dmndLbl.Links[0].LinkData = 
                 "http://desmondbrand.com/caffeinated";
+            OriginallyByLink.Links[0].LinkData =
+                "http://desmondbrand.com/caffeinated";
+            ForkedByTheJoeFinLink.Links[0].LinkData =
+                "https://github.com/TheJoeFin/Caffeinated";
         }
 
         #region Assembly Attribute Accessors
@@ -85,6 +89,18 @@ namespace Caffeinated {
         ) {
             string target = e.Link.LinkData as string;
             System.Diagnostics.Process.Start(target);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string target = e.Link.LinkData as string;
+            Process.Start(target);
+        }
+
+        private void ForkedByTheJoeFinLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string target = e.Link.LinkData as string;
+            Process.Start(target);
         }
     }
 }

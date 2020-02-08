@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cup-coffee-icon.ico" />
+    <None Include="Resources\%24this.Icon.ico" />
     <Content Include="Resources\Caffeine-Black-512.png" />
     <None Include="Resources\Caffeine-Black-96.png" />
     <Content Include="Resources\cup-coffee-icon-64.png" />

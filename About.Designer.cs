@@ -29,6 +29,8 @@
             this.dmndLbl = new System.Windows.Forms.LinkLabel();
             this.caffeineLbl = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.OriginallyByLink = new System.Windows.Forms.LinkLabel();
+            this.ForkedByTheJoeFinLink = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -36,7 +38,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Caffeinated.Properties.Resources.Caffeine_Black_96;
-            this.pictureBox1.Location = new System.Drawing.Point(105, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(101, 22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 153);
@@ -82,11 +84,9 @@
             // 
             // caffeineLbl
             // 
-            this.caffeineLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.caffeineLbl.AutoSize = true;
             this.caffeineLbl.LinkArea = new System.Windows.Forms.LinkArea(12, 17);
-            this.caffeineLbl.Location = new System.Drawing.Point(57, 400);
+            this.caffeineLbl.Location = new System.Drawing.Point(67, 390);
             this.caffeineLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.caffeineLbl.Name = "caffeineLbl";
             this.caffeineLbl.Size = new System.Drawing.Size(246, 30);
@@ -111,11 +111,38 @@
             this.label1.Text = "Caffeinated";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // OriginallyByLink
+            // 
+            this.OriginallyByLink.AutoSize = true;
+            this.OriginallyByLink.LinkArea = new System.Windows.Forms.LinkArea(14, 18);
+            this.OriginallyByLink.Location = new System.Drawing.Point(17, 439);
+            this.OriginallyByLink.Name = "OriginallyByLink";
+            this.OriginallyByLink.Size = new System.Drawing.Size(163, 30);
+            this.OriginallyByLink.TabIndex = 21;
+            this.OriginallyByLink.TabStop = true;
+            this.OriginallyByLink.Text = "Originally by dmnd";
+            this.OriginallyByLink.UseCompatibleTextRendering = true;
+            this.OriginallyByLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // ForkedByTheJoeFinLink
+            // 
+            this.ForkedByTheJoeFinLink.AutoSize = true;
+            this.ForkedByTheJoeFinLink.LinkArea = new System.Windows.Forms.LinkArea(10, 19);
+            this.ForkedByTheJoeFinLink.Location = new System.Drawing.Point(198, 439);
+            this.ForkedByTheJoeFinLink.Name = "ForkedByTheJoeFinLink";
+            this.ForkedByTheJoeFinLink.Size = new System.Drawing.Size(174, 30);
+            this.ForkedByTheJoeFinLink.TabIndex = 22;
+            this.ForkedByTheJoeFinLink.Text = "Forked by TheJoeFin";
+            this.ForkedByTheJoeFinLink.UseCompatibleTextRendering = true;
+            this.ForkedByTheJoeFinLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForkedByTheJoeFinLink_LinkClicked);
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 437);
+            this.ClientSize = new System.Drawing.Size(378, 481);
+            this.Controls.Add(this.ForkedByTheJoeFinLink);
+            this.Controls.Add(this.OriginallyByLink);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.caffeineLbl);
             this.Controls.Add(this.dmndLbl);
@@ -147,6 +174,7 @@
         private System.Windows.Forms.LinkLabel dmndLbl;
         private System.Windows.Forms.LinkLabel caffeineLbl;
         private System.Windows.Forms.Label label1;
-
+        private System.Windows.Forms.LinkLabel OriginallyByLink;
+        private System.Windows.Forms.LinkLabel ForkedByTheJoeFinLink;
     }
 }
