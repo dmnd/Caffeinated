@@ -80,14 +80,6 @@ namespace Caffeinated {
                 sortedTimes = times.OrderByDescending(i => i);
             }
 
-            var activateForItem = new MenuItem("&Stay awake for");
-            foreach (var time in sortedTimes) {
-                var item = new MenuItem(Duration.ToDescription(time));
-                item.Tag = time; 
-                item.Click += new EventHandler(item_Click);
-                activateForItem.MenuItems.Add(item);
-            }
-
             var settingsItem = new MenuItem("&Settings...");
             settingsItem.Click += new EventHandler(settingsItem_Click);
 
@@ -96,13 +88,20 @@ namespace Caffeinated {
 
             contextMenu.MenuItems.AddRange(
                 new MenuItem[] { 
-                    activateForItem, 
-                    new MenuItem("-"),
                     settingsItem,
                     aboutItem,
-                    exitItem
+                    exitItem,
+                    new MenuItem("-"),
+                    //activateForItem, 
                 }
             );
+
+            foreach (var time in sortedTimes) {
+                var item = new MenuItem(Duration.ToDescription(time));
+                item.Tag = time; 
+                item.Click += new EventHandler(item_Click);
+                contextMenu.MenuItems.Add(item);
+            }
 
             this.offIcon = new Icon(
                 Properties.Resources.cup_coffee_icon_bw,
