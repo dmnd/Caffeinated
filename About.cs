@@ -13,8 +13,6 @@ namespace Caffeinated {
             InitializeComponent();
             caffeineLbl.Links[0].LinkData = 
                 "http://lightheadsw.com/caffeine/";
-            visualpharmaLbl.Links[0].LinkData = 
-                "http://www.visualpharm.com";
             dmndLbl.Links[0].LinkData = 
                 "http://desmondbrand.com/caffeinated";
         }

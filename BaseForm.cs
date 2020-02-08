@@ -14,5 +14,19 @@ namespace Caffeinated {
             // Falls back to something decent if system lacks the font.
             this.Font = SystemFonts.MessageBoxFont;
         }
+
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
+            this.SuspendLayout();
+            // 
+            // BaseForm
+            // 
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "BaseForm";
+            this.ResumeLayout(false);
+
+        }
     }
 }

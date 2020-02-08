@@ -207,6 +207,7 @@ namespace Caffeinated {
 
         private void exitItem_Click(object Sender, EventArgs e) {
             deactivate();
+            notifyIcon.Dispose();
             ExitThread();
         }
 
