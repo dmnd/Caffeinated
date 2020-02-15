@@ -38,10 +38,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Caffeinated.Properties.Resources.Caffeine_Black_96;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(172, 172);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -132,6 +132,7 @@
             this.ForkedByTheJoeFinLink.Name = "ForkedByTheJoeFinLink";
             this.ForkedByTheJoeFinLink.Size = new System.Drawing.Size(174, 30);
             this.ForkedByTheJoeFinLink.TabIndex = 22;
+            this.ForkedByTheJoeFinLink.TabStop = true;
             this.ForkedByTheJoeFinLink.Text = "Forked by TheJoeFin";
             this.ForkedByTheJoeFinLink.UseCompatibleTextRendering = true;
             this.ForkedByTheJoeFinLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForkedByTheJoeFinLink_LinkClicked);

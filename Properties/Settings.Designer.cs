@@ -61,7 +61,7 @@ namespace Caffeinated.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0,5,10,15,30,60,180,300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0,15,60")]
         public string Durations {
             get {
                 return ((string)(this["Durations"]));

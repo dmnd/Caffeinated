@@ -12,7 +12,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Durations" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0,5,10,15,30,60,180,300</Value>
+      <Value Profile="(Default)">0,15,60</Value>
     </Setting>
   </Settings>
 </SettingsFile>
