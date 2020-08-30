@@ -25,8 +25,33 @@ namespace Caffeinated {
             DefaultDurationBox.ValueMember = "Minutes";
             DefaultDurationBox.SelectedItem = defaultItem;
 
-            var shortcut = GetShortcutPath();
-            StartupChkBox.Checked = File.Exists(shortcut);
+            setStartupCheckBox();
+            
+
+        }
+
+        private async void setStartupCheckBox()
+        {
+            StartupTask startupTask = await StartupTask.GetAsync("StartCaffeinated");
+            Debug.WriteLine("Startup is " + startupTask.State.ToString());
+
+            switch (startupTask.State)
+            {
+                case StartupTaskState.Disabled:
+                    // Task is disabled but can be enabled.
+                    StartupChkBox.Checked = false;
+                    break;
+                case StartupTaskState.DisabledByUser:
+                    // Task is disabled and user must enable it manually.
+                    StartupChkBox.Checked = false;
+                    StartupChkBox.Enabled = false;
+
+                    StartupChkBox.Text += "\nDisabled in Task Manager";
+                    break;
+                case StartupTaskState.Enabled:
+                    StartupChkBox.Checked = true;
+                    break;
+            }
         }
 
         private void okBtn_Click(object sender, EventArgs e) {
@@ -48,51 +73,24 @@ namespace Caffeinated {
             }
         }
 
-        static string GetShortcutPath(ReflectedShell shell = null) {
-            if (shell == null) {
-                shell = new ReflectedShell();
-            }
-            var startup = shell.GetSpecialFolder("Startup");
-            return Path.Combine(startup, "Caffeinated.lnk");
-        }
-
         private async void LaunchWithWindowsLogin(object sender, EventArgs e)
         {
-            StartupTask startupTask = await StartupTask.GetAsync("Caffeinated");
-            Debug.WriteLine("Startup is " + startupTask.State.ToString());
+            StartupTask startupTask = await StartupTask.GetAsync("StartCaffeinated");
 
-            switch (startupTask.State)
+
+            switch (StartupChkBox.Checked)
             {
-                case StartupTaskState.Disabled:
-                    // Task is disabled but can be enabled.
+                case true:
                     StartupTaskState newState = await startupTask.RequestEnableAsync();
                     Debug.WriteLine("Request to enable startup, result = {0}", newState);
                     break;
-                case StartupTaskState.DisabledByUser:
-                    // Task is disabled and user must enable it manually.
-                    Debug.WriteLine("Startup is diabled by user.");
+                case false:
+                    startupTask.Disable();
+                    Debug.WriteLine("Disabled startup task");
                     break;
-                case StartupTaskState.Enabled:
-                    Debug.WriteLine("Startup is enabled.");
+                default:
                     break;
             }
-        }
-
-        private  void StartupChkBox_CheckedChanged(object sender, EventArgs e) {
-            //var shell = new ReflectedShell();
-            //var shortcut = GetShortcutPath(shell);
-            //var executable = Assembly.GetExecutingAssembly()
-            //                         .GetName().CodeBase;
-            //if (StartupChkBox.Checked) {
-            //    // create shortcut in startup items folder in start menu
-            //    shell.CreateShortcut(shortcut, executable);
-            //}
-            //else {
-            //    // remove shortcut if it exists
-            //    File.Delete(shortcut);
-            //}
-
-            
         }
     }
 }
