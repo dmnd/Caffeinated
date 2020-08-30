@@ -104,6 +104,7 @@
             this.ActivateChkBox.TabIndex = 3;
             this.ActivateChkBox.Text = "Activate upon launch";
             this.ActivateChkBox.UseVisualStyleBackColor = true;
+            this.ActivateChkBox.CheckedChanged += new System.EventHandler(this.StartupChkBox_CheckedChanged);
             // 
             // StartupChkBox
             // 
@@ -115,7 +116,7 @@
             this.StartupChkBox.TabIndex = 2;
             this.StartupChkBox.Text = "Automatically launch at Windows startup";
             this.StartupChkBox.UseVisualStyleBackColor = true;
-            this.StartupChkBox.CheckedChanged += new System.EventHandler(this.StartupChkBox_CheckedChanged);
+            this.StartupChkBox.CheckedChanged += new System.EventHandler(this.LaunchWithWindowsLogin);
             // 
             // okBtn
             // 
