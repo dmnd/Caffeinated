@@ -71,7 +71,7 @@ namespace Caffeinated {
             }
         }
 
-        private async void LaunchWithWindowsLogin(object sender, EventArgs e)
+        private async void StartupChkBox_CheckedChanged(object sender, EventArgs e)
         {
             StartupTask startupTask = await StartupTask.GetAsync("StartCaffeinated");
 

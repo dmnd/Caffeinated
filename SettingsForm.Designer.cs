@@ -30,12 +30,12 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.StartupChkBox = new System.Windows.Forms.CheckBox();
-            this.ActivateChkBox = new System.Windows.Forms.CheckBox();
-            this.SettingsAtLaunchChkBox = new System.Windows.Forms.CheckBox();
-            this.DefaultDurationBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DefaultDurationBox = new System.Windows.Forms.ComboBox();
+            this.SettingsAtLaunchChkBox = new System.Windows.Forms.CheckBox();
+            this.ActivateChkBox = new System.Windows.Forms.CheckBox();
+            this.StartupChkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -117,29 +117,38 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 240);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
-            // StartupChkBox
+            // tableLayoutPanel2
             // 
-            this.StartupChkBox.AutoSize = true;
-            this.StartupChkBox.Location = new System.Drawing.Point(4, 5);
-            this.StartupChkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.StartupChkBox.Name = "StartupChkBox";
-            this.StartupChkBox.Size = new System.Drawing.Size(362, 29);
-            this.StartupChkBox.TabIndex = 3;
-            this.StartupChkBox.Text = "Automatically launch at Windows startup";
-            this.StartupChkBox.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DefaultDurationBox, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 140);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(410, 56);
+            this.tableLayoutPanel2.TabIndex = 13;
             // 
-            // ActivateChkBox
+            // label3
             // 
-            this.ActivateChkBox.AutoSize = true;
-            this.ActivateChkBox.Checked = global::Caffeinated.Properties.Settings.Default.ActivateAtLaunch;
-            this.ActivateChkBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Caffeinated.Properties.Settings.Default, "ActivateAtLaunch", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ActivateChkBox.Location = new System.Drawing.Point(4, 44);
-            this.ActivateChkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ActivateChkBox.Name = "ActivateChkBox";
-            this.ActivateChkBox.Size = new System.Drawing.Size(204, 29);
-            this.ActivateChkBox.TabIndex = 4;
-            this.ActivateChkBox.Text = "Activate upon launch";
-            this.ActivateChkBox.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Default duration:";
+            // 
+            // DefaultDurationBox
+            // 
+            this.DefaultDurationBox.FormattingEnabled = true;
+            this.DefaultDurationBox.Location = new System.Drawing.Point(157, 5);
+            this.DefaultDurationBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DefaultDurationBox.Name = "DefaultDurationBox";
+            this.DefaultDurationBox.Size = new System.Drawing.Size(180, 33);
+            this.DefaultDurationBox.TabIndex = 8;
             // 
             // SettingsAtLaunchChkBox
             // 
@@ -155,38 +164,30 @@
             this.SettingsAtLaunchChkBox.Text = "Show this message upon launch";
             this.SettingsAtLaunchChkBox.UseVisualStyleBackColor = true;
             // 
-            // DefaultDurationBox
+            // ActivateChkBox
             // 
-            this.DefaultDurationBox.FormattingEnabled = true;
-            this.DefaultDurationBox.Location = new System.Drawing.Point(157, 5);
-            this.DefaultDurationBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DefaultDurationBox.Name = "DefaultDurationBox";
-            this.DefaultDurationBox.Size = new System.Drawing.Size(180, 33);
-            this.DefaultDurationBox.TabIndex = 8;
+            this.ActivateChkBox.AutoSize = true;
+            this.ActivateChkBox.Checked = global::Caffeinated.Properties.Settings.Default.ActivateAtLaunch;
+            this.ActivateChkBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Caffeinated.Properties.Settings.Default, "ActivateAtLaunch", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ActivateChkBox.Location = new System.Drawing.Point(4, 44);
+            this.ActivateChkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ActivateChkBox.Name = "ActivateChkBox";
+            this.ActivateChkBox.Size = new System.Drawing.Size(204, 29);
+            this.ActivateChkBox.TabIndex = 4;
+            this.ActivateChkBox.Text = "Activate upon launch";
+            this.ActivateChkBox.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // StartupChkBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Default duration:";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.DefaultDurationBox, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 140);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(410, 56);
-            this.tableLayoutPanel2.TabIndex = 13;
+            this.StartupChkBox.AutoSize = true;
+            this.StartupChkBox.Location = new System.Drawing.Point(4, 5);
+            this.StartupChkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StartupChkBox.Name = "StartupChkBox";
+            this.StartupChkBox.Size = new System.Drawing.Size(362, 29);
+            this.StartupChkBox.TabIndex = 3;
+            this.StartupChkBox.Text = "Automatically launch at Windows startup";
+            this.StartupChkBox.UseVisualStyleBackColor = true;
+            this.StartupChkBox.CheckedChanged += new System.EventHandler(this.StartupChkBox_CheckedChanged);
             // 
             // SettingsForm
             // 
