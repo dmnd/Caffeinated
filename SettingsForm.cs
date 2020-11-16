@@ -26,8 +26,6 @@ namespace Caffeinated {
             DefaultDurationBox.SelectedItem = defaultItem;
 
             setStartupCheckBox();
-            
-
         }
 
         private async void setStartupCheckBox()
@@ -76,7 +74,6 @@ namespace Caffeinated {
         private async void LaunchWithWindowsLogin(object sender, EventArgs e)
         {
             StartupTask startupTask = await StartupTask.GetAsync("StartCaffeinated");
-
 
             switch (StartupChkBox.Checked)
             {
