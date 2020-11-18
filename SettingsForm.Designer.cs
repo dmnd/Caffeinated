@@ -180,6 +180,7 @@
             this.DefaultDurationBox.Name = "DefaultDurationBox";
             this.DefaultDurationBox.Size = new System.Drawing.Size(130, 33);
             this.DefaultDurationBox.TabIndex = 8;
+            this.DefaultDurationBox.SelectedIndexChanged += new System.EventHandler(this.DefaultDurationBox_SelectedIndexChanged);
             // 
             // SettingsAtLaunchChkBox
             // 

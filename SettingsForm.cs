@@ -28,8 +28,7 @@ namespace Caffeinated {
             setStartupCheckBox();
         }
 
-        private async void setStartupCheckBox()
-        {
+        private async void setStartupCheckBox() {
             StartupTask startupTask = await StartupTask.GetAsync("StartCaffeinated");
             Debug.WriteLine("Startup is " + startupTask.State.ToString());
 
@@ -71,8 +70,7 @@ namespace Caffeinated {
             }
         }
 
-        private async void StartupChkBox_CheckedChanged(object sender, EventArgs e)
-        {
+        private async void StartupChkBox_CheckedChanged(object sender, EventArgs e) {
             StartupTask startupTask = await StartupTask.GetAsync("StartCaffeinated");
 
             switch (StartupChkBox.Checked)
@@ -90,8 +88,7 @@ namespace Caffeinated {
             }
         }
 
-        private void addCustomDurationBTN_Click(object sender, EventArgs e)
-        {
+        private void addCustomDurationBTN_Click(object sender, EventArgs e) {
             int newDuration = 0;
             int.TryParse(CustomDurationTXBX.Text, out newDuration);
 
@@ -123,8 +120,8 @@ namespace Caffeinated {
             };
 
             Durations.Add(newCustomDuration);
-            Settings.Default.RealDurations.Add(newDuration);
-            Settings.Default.Save();
+            Settings.Default.RealDurations.Add(newDuration); 
+            Settings.Default.Durations += $",{newDuration}";
 
             CustomDurationTXBX.Text = "";            
         }
