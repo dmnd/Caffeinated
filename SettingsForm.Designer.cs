@@ -49,9 +49,9 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CustomDurationLBL = new System.Windows.Forms.Label();
+            this.CustomDurationTXBX = new System.Windows.Forms.TextBox();
+            this.addCustomDurationBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -141,8 +141,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 378F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 634);
@@ -159,7 +159,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(458, 56);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(458, 54);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // label3
@@ -237,7 +237,7 @@
             this.tableLayoutPanel3.Controls.Add(this.pictureBox5, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox6, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox7, 2, 3);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 249);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 260);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -352,41 +352,42 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 202);
+            this.tableLayoutPanel4.Controls.Add(this.CustomDurationLBL, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.CustomDurationTXBX, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.addCustomDurationBTN, 2, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 200);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(456, 41);
             this.tableLayoutPanel4.TabIndex = 15;
             // 
-            // label4
+            // CustomDurationLBL
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 41);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Custom Durration";
+            this.CustomDurationLBL.AutoSize = true;
+            this.CustomDurationLBL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CustomDurationLBL.Location = new System.Drawing.Point(3, 0);
+            this.CustomDurationLBL.Name = "CustomDurationLBL";
+            this.CustomDurationLBL.Size = new System.Drawing.Size(194, 25);
+            this.CustomDurationLBL.TabIndex = 0;
+            this.CustomDurationLBL.Text = "Custom Durration";
             // 
-            // textBox1
+            // CustomDurationTXBX
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 31);
-            this.textBox1.TabIndex = 1;
+            this.CustomDurationTXBX.Location = new System.Drawing.Point(203, 3);
+            this.CustomDurationTXBX.Name = "CustomDurationTXBX";
+            this.CustomDurationTXBX.Size = new System.Drawing.Size(131, 31);
+            this.CustomDurationTXBX.TabIndex = 1;
             // 
-            // button1
+            // addCustomDurationBTN
             // 
-            this.button1.Location = new System.Drawing.Point(356, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addCustomDurationBTN.Location = new System.Drawing.Point(356, 3);
+            this.addCustomDurationBTN.Name = "addCustomDurationBTN";
+            this.addCustomDurationBTN.Size = new System.Drawing.Size(96, 31);
+            this.addCustomDurationBTN.TabIndex = 2;
+            this.addCustomDurationBTN.Text = "Add";
+            this.addCustomDurationBTN.UseVisualStyleBackColor = true;
+            this.addCustomDurationBTN.Click += new System.EventHandler(this.addCustomDurationBTN_Click);
             // 
             // SettingsForm
             // 
@@ -453,8 +454,8 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label CustomDurationLBL;
+        private System.Windows.Forms.TextBox CustomDurationTXBX;
+        private System.Windows.Forms.Button addCustomDurationBTN;
     }
 }

@@ -89,5 +89,44 @@ namespace Caffeinated {
                     break;
             }
         }
+
+        private void addCustomDurationBTN_Click(object sender, EventArgs e)
+        {
+            int newDuration = 0;
+            int.TryParse(CustomDurationTXBX.Text, out newDuration);
+
+            if (newDuration == 0 || newDuration < 0)
+            {
+                CustomDurationTXBX.Text = "";
+                MessageBox.Show(
+                    "Enter a number larger than 0.",
+                    "Caffeinated",
+                    MessageBoxButtons.OK
+                );
+                return;
+            }
+
+            if (Settings.Default.RealDurations.Contains(newDuration))
+            {
+                CustomDurationTXBX.Text = "";
+                MessageBox.Show(
+                    $"{newDuration} is already a duration.",
+                    "Caffeinated",
+                    MessageBoxButtons.OK
+                );
+                return;
+            }
+
+            Duration newCustomDuration = new Duration
+            {
+                Minutes = newDuration
+            };
+
+            Durations.Add(newCustomDuration);
+            Settings.Default.RealDurations.Add(newDuration);
+            Settings.Default.Save();
+
+            CustomDurationTXBX.Text = "";            
+        }
     }
 }
