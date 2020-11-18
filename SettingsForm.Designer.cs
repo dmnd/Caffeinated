@@ -370,7 +370,7 @@
             this.CustomDurationLBL.Name = "CustomDurationLBL";
             this.CustomDurationLBL.Size = new System.Drawing.Size(194, 25);
             this.CustomDurationLBL.TabIndex = 0;
-            this.CustomDurationLBL.Text = "Custom Durration";
+            this.CustomDurationLBL.Text = "Custom duration:";
             // 
             // CustomDurationTXBX
             // 
