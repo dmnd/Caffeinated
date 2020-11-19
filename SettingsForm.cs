@@ -18,14 +18,56 @@ namespace Caffeinated {
             this.Durations = new BindingList<Duration>(durations.ToList());
             var defaultItem = this.Durations.Where(
                 d => d.Minutes == Settings.Default.DefaultDuration
-            ).First();
+            ).FirstOrDefault();
 
             DefaultDurationBox.DataSource = this.Durations;
             DefaultDurationBox.DisplayMember = "Description";
             DefaultDurationBox.ValueMember = "Minutes";
             DefaultDurationBox.SelectedItem = defaultItem;
 
+            MenuItem deleteMI = new MenuItem("Delete Duration");
+            deleteMI.Click += DeleteMI_Click;
+            ContextMenu durationCM = new ContextMenu();
+            durationCM.MenuItems.Add(deleteMI);
+            DefaultDurationBox.ContextMenu = durationCM;
+
             setStartupCheckBox();
+        }
+
+        private void DeleteMI_Click(object sender, EventArgs e)
+        {
+            Duration durationToDelete = DefaultDurationBox.SelectedItem as Duration;
+
+            DialogResult result = MessageBox.Show(
+                    $"Delete {durationToDelete.Description}?",
+                    "Caffeinated",
+                    MessageBoxButtons.YesNo
+                );
+
+            switch (result)
+            {
+                case DialogResult.None:
+                    break;
+                case DialogResult.OK:
+                    break;
+                case DialogResult.Cancel:
+                    break;
+                case DialogResult.Abort:
+                    break;
+                case DialogResult.Retry:
+                    break;
+                case DialogResult.Ignore:
+                    break;
+                case DialogResult.Yes:
+                    Durations.Remove(durationToDelete);
+                    Settings.Default.RealDurations.Remove(durationToDelete.Minutes);
+                    Settings.Default.Durations.Replace(durationToDelete.Minutes.ToString(),"");
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
+            }
         }
 
         private async void setStartupCheckBox() {
