@@ -61,7 +61,7 @@ namespace Caffeinated {
                 case DialogResult.Yes:
                     Durations.Remove(durationToDelete);
                     Settings.Default.RealDurations.Remove(durationToDelete.Minutes);
-                    Settings.Default.Durations.Replace(durationToDelete.Minutes.ToString(),"");
+                    Settings.Default.RealDurations = Settings.Default.RealDurations;
                     break;
                 case DialogResult.No:
                     break;
@@ -134,11 +134,11 @@ namespace Caffeinated {
             int newDuration = 0;
             int.TryParse(CustomDurationTXBX.Text, out newDuration);
 
-            if (newDuration == 0 || newDuration < 0)
+            if ( newDuration < 0)
             {
                 CustomDurationTXBX.Text = "";
                 MessageBox.Show(
-                    "Enter a number larger than 0.",
+                    "Enter a positive number.",
                     "Caffeinated",
                     MessageBoxButtons.OK
                 );
@@ -162,6 +162,12 @@ namespace Caffeinated {
             };
 
             Durations.Add(newCustomDuration);
+            var sortedDurations = Durations.OrderByDescending(i => i).ToList();
+            Durations.Clear();
+            foreach (var item in sortedDurations)
+            {
+                Durations.Add(item);
+            }
             Settings.Default.RealDurations.Add(newDuration); 
             Settings.Default.Durations += $",{newDuration}";
 

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Caffeinated.Properties;
 
 namespace Caffeinated {
-    public class Duration {
+    public class Duration: IComparable {
         public int Minutes { get; set; }
         public string Description {
             get {
@@ -33,6 +33,26 @@ namespace Caffeinated {
                     return String.Format("{0} hours", hours);
                 }
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            Duration otherDuration = obj as Duration;
+
+            if (otherDuration != null)
+            {
+                if (otherDuration.Minutes > this.Minutes)
+                    return 1;
+                
+                if (otherDuration.Minutes < this.Minutes)
+                    return -1;
+
+                return 0;
+            }
+            else
+                return 1;
         }
     }
 
@@ -65,44 +85,6 @@ namespace Caffeinated {
             this.timer = new Timer(components);
             timer.Tick += new EventHandler(timer_Tick);
 
-            var contextMenu = new ContextMenu();
-
-            var exitItem = new MenuItem("E&xit");
-            exitItem.Click += new EventHandler(this.exitItem_Click);
-
-            // we want the lower durations to be closer to the mouse. So, 
-            var times = Settings.Default.RealDurations;
-            IEnumerable<int> sortedTimes = Enumerable.Empty<int>();
-            if ((new Taskbar()).Position == TaskbarPosition.Top) {
-                sortedTimes = times.OrderBy(i => i);
-            }
-            else {
-                sortedTimes = times.OrderByDescending(i => i);
-            }
-
-            var settingsItem = new MenuItem("&Settings...");
-            settingsItem.Click += new EventHandler(settingsItem_Click);
-
-            var aboutItem = new MenuItem("&About...");
-            aboutItem.Click += new EventHandler(aboutItem_Click);
-
-            contextMenu.MenuItems.AddRange(
-                new MenuItem[] { 
-                    settingsItem,
-                    aboutItem,
-                    exitItem,
-                    new MenuItem("-"),
-                    //activateForItem, 
-                }
-            );
-
-            foreach (var time in sortedTimes) {
-                var item = new MenuItem(Duration.ToDescription(time));
-                item.Tag = time; 
-                item.Click += new EventHandler(item_Click);
-                contextMenu.MenuItems.Add(item);
-            }
-
             this.offIcon = new Icon(
                 Properties.Resources.cup_coffee_icon_bw,
                 SystemInformation.SmallIconSize
@@ -113,7 +95,7 @@ namespace Caffeinated {
             );
             this.notifyIcon = new NotifyIcon(this.components);
 
-            notifyIcon.ContextMenu = contextMenu;
+            setContextMenu();
 
             // tooltip
             notifyIcon.Text = "Caffeinated";
@@ -133,6 +115,55 @@ namespace Caffeinated {
             }
         }
 
+        public void setContextMenu() {
+            var contextMenu = new ContextMenu();
+
+            var exitItem = new MenuItem("E&xit");
+            exitItem.Click += new EventHandler(this.exitItem_Click);
+
+            // If the user deleted all time settings, add 0 back in.
+            if (Settings.Default.Durations.Length == 0)
+                Settings.Default.Durations = "0";
+
+            // we want the lower durations to be closer to the mouse. So, 
+            var times = Settings.Default.RealDurations;
+            IEnumerable<int> sortedTimes = Enumerable.Empty<int>();
+            if ((new Taskbar()).Position == TaskbarPosition.Top)
+            {
+                sortedTimes = times.OrderBy(i => i);
+            }
+            else
+            {
+                sortedTimes = times.OrderByDescending(i => i);
+            }
+
+            var settingsItem = new MenuItem("&Settings...");
+            settingsItem.Click += new EventHandler(settingsItem_Click);
+
+            var aboutItem = new MenuItem("&About...");
+            aboutItem.Click += new EventHandler(aboutItem_Click);
+
+            contextMenu.MenuItems.AddRange(
+                new MenuItem[] {
+                    settingsItem,
+                    aboutItem,
+                    exitItem,
+                    new MenuItem("-"),
+                    //activateForItem, 
+                }
+            );
+
+            foreach (var time in sortedTimes)
+            {
+                var item = new MenuItem(Duration.ToDescription(time));
+                item.Tag = time;
+                item.Click += new EventHandler(item_Click);
+                contextMenu.MenuItems.Add(item);
+            }
+
+            notifyIcon.ContextMenu = contextMenu;
+        }
+
         void aboutItem_Click(object sender, EventArgs e) {
             aboutForm = new AboutForm();
             aboutForm.Show();
@@ -144,7 +175,13 @@ namespace Caffeinated {
 
         void showSettings() {
             settingsForm = new SettingsForm();
+            settingsForm.FormClosing += SettingsForm_FormClosing;
             settingsForm.Show();
+        }
+
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            setContextMenu();
         }
 
         void timer_Tick(object sender, EventArgs e) {
