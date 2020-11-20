@@ -20,23 +20,27 @@ namespace Caffeinated {
             if (time == 0) {
                 return "Indefinitely";
             }
-            int mins = time % 60;
-            if (mins != 0) {
-                return String.Format("{0} minutes", mins);
-            }
-            else {
+            
+            string returnDescription = "";
+
+            if(time >= 60) {
                 int hours = time / 60;
                 if (hours == 1) {
-                    return "1 hour";
+                    returnDescription = "1 hour ";
                 }
                 else {
-                    return String.Format("{0} hours", hours);
+                    returnDescription = String.Format("{0} hours ", hours);
                 }
             }
+            int mins = time % 60;
+            if (mins != 0) {
+                returnDescription += String.Format("{0} minutes", mins);
+            }
+
+            return returnDescription;
         }
 
-        public int CompareTo(object obj)
-        {
+        public int CompareTo(object obj) {
             if (obj == null) return 1;
 
             Duration otherDuration = obj as Duration;
@@ -128,12 +132,10 @@ namespace Caffeinated {
             // we want the lower durations to be closer to the mouse. So, 
             var times = Settings.Default.RealDurations;
             IEnumerable<int> sortedTimes = Enumerable.Empty<int>();
-            if ((new Taskbar()).Position == TaskbarPosition.Top)
-            {
+            if ((new Taskbar()).Position == TaskbarPosition.Top) {
                 sortedTimes = times.OrderBy(i => i);
             }
-            else
-            {
+            else {
                 sortedTimes = times.OrderByDescending(i => i);
             }
 
@@ -153,8 +155,7 @@ namespace Caffeinated {
                 }
             );
 
-            foreach (var time in sortedTimes)
-            {
+            foreach (var time in sortedTimes) {
                 var item = new MenuItem(Duration.ToDescription(time));
                 item.Tag = time;
                 item.Click += new EventHandler(item_Click);
