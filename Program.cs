@@ -26,15 +26,18 @@ namespace Caffeinated {
             if(time >= 60) {
                 int hours = time / 60;
                 if (hours == 1) {
-                    returnDescription = "1 hour ";
+                    returnDescription = "1 hr ";
                 }
                 else {
-                    returnDescription = String.Format("{0} hours ", hours);
+                    returnDescription = String.Format("{0} hrs ", hours);
                 }
             }
             int mins = time % 60;
-            if (mins != 0) {
-                returnDescription += String.Format("{0} minutes", mins);
+            if(mins == 1) {
+                returnDescription += String.Format("{0} min", mins);
+            }
+            if (mins > 1) {
+                returnDescription += String.Format("{0} mins", mins);
             }
 
             return returnDescription;
