@@ -70,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(181, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(453, 200);
+            this.label1.Size = new System.Drawing.Size(406, 200);
             this.label1.TabIndex = 0;
             this.label1.Text = "Caffeinated is now running. You can find its icon in the notification area near t" +
     "he clock. Click it to keep your PC awake by disabling automatic sleep. Click the" +
@@ -82,7 +82,7 @@
             this.label2.Location = new System.Drawing.Point(181, 132);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(453, 68);
+            this.label2.Size = new System.Drawing.Size(406, 68);
             this.label2.TabIndex = 1;
             this.label2.Text = "Right-click the notification area icon to show the Caffeinated menu.";
             // 
@@ -90,7 +90,7 @@
             // 
             this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.okBtn.Location = new System.Drawing.Point(377, 894);
+            this.okBtn.Location = new System.Drawing.Point(326, 894);
             this.okBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(124, 45);
@@ -104,7 +104,7 @@
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cancelBtn.Location = new System.Drawing.Point(511, 894);
+            this.cancelBtn.Location = new System.Drawing.Point(460, 894);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(124, 45);
@@ -145,7 +145,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 378F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 634);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(401, 634);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // tableLayoutPanel2
@@ -159,7 +159,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(458, 54);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(391, 54);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // label3
@@ -378,7 +378,7 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel4.Controls.Add(this.CustomDurationLBL, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.CustomDurationTXBX, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.addCustomDurationBTN, 2, 0);
@@ -386,7 +386,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(456, 41);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(345, 41);
             this.tableLayoutPanel4.TabIndex = 15;
             // 
             // CustomDurationLBL
@@ -403,14 +403,14 @@
             // 
             this.CustomDurationTXBX.Location = new System.Drawing.Point(203, 3);
             this.CustomDurationTXBX.Name = "CustomDurationTXBX";
-            this.CustomDurationTXBX.Size = new System.Drawing.Size(131, 31);
+            this.CustomDurationTXBX.Size = new System.Drawing.Size(52, 31);
             this.CustomDurationTXBX.TabIndex = 1;
             // 
             // addCustomDurationBTN
             // 
-            this.addCustomDurationBTN.Location = new System.Drawing.Point(356, 3);
+            this.addCustomDurationBTN.Location = new System.Drawing.Point(268, 3);
             this.addCustomDurationBTN.Name = "addCustomDurationBTN";
-            this.addCustomDurationBTN.Size = new System.Drawing.Size(96, 31);
+            this.addCustomDurationBTN.Size = new System.Drawing.Size(65, 31);
             this.addCustomDurationBTN.TabIndex = 2;
             this.addCustomDurationBTN.Text = "Add";
             this.addCustomDurationBTN.UseVisualStyleBackColor = true;
@@ -423,7 +423,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(654, 953);
+            this.ClientSize = new System.Drawing.Size(603, 953);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cancelBtn);
