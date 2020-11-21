@@ -90,7 +90,7 @@
             // 
             this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.okBtn.Location = new System.Drawing.Point(377, 829);
+            this.okBtn.Location = new System.Drawing.Point(377, 894);
             this.okBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(124, 45);
@@ -104,7 +104,7 @@
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cancelBtn.Location = new System.Drawing.Point(511, 829);
+            this.cancelBtn.Location = new System.Drawing.Point(511, 894);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(124, 45);
@@ -260,7 +260,7 @@
             // OnIconLbl
             // 
             this.OnIconLbl.AutoSize = true;
-            this.OnIconLbl.Location = new System.Drawing.Point(259, 0);
+            this.OnIconLbl.Location = new System.Drawing.Point(253, 0);
             this.OnIconLbl.Name = "OnIconLbl";
             this.OnIconLbl.Size = new System.Drawing.Size(75, 25);
             this.OnIconLbl.TabIndex = 1;
@@ -271,10 +271,12 @@
             this.defaultRDBTN.AutoSize = true;
             this.defaultRDBTN.Location = new System.Drawing.Point(3, 28);
             this.defaultRDBTN.Name = "defaultRDBTN";
-            this.defaultRDBTN.Size = new System.Drawing.Size(94, 29);
+            this.defaultRDBTN.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.defaultRDBTN.Size = new System.Drawing.Size(94, 54);
             this.defaultRDBTN.TabIndex = 2;
             this.defaultRDBTN.TabStop = true;
             this.defaultRDBTN.Text = "Default";
+            this.defaultRDBTN.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.defaultRDBTN.UseVisualStyleBackColor = true;
             // 
             // eyeZZZRDBTN
@@ -282,7 +284,8 @@
             this.eyeZZZRDBTN.AutoSize = true;
             this.eyeZZZRDBTN.Location = new System.Drawing.Point(3, 138);
             this.eyeZZZRDBTN.Name = "eyeZZZRDBTN";
-            this.eyeZZZRDBTN.Size = new System.Drawing.Size(135, 29);
+            this.eyeZZZRDBTN.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.eyeZZZRDBTN.Size = new System.Drawing.Size(135, 54);
             this.eyeZZZRDBTN.TabIndex = 3;
             this.eyeZZZRDBTN.TabStop = true;
             this.eyeZZZRDBTN.Text = "Eye with zZZ";
@@ -293,7 +296,8 @@
             this.mugRDBTN.AutoSize = true;
             this.mugRDBTN.Location = new System.Drawing.Point(3, 248);
             this.mugRDBTN.Name = "mugRDBTN";
-            this.mugRDBTN.Size = new System.Drawing.Size(74, 29);
+            this.mugRDBTN.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.mugRDBTN.Size = new System.Drawing.Size(74, 54);
             this.mugRDBTN.TabIndex = 4;
             this.mugRDBTN.TabStop = true;
             this.mugRDBTN.Text = "Mug";
@@ -301,49 +305,68 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(153, 28);
+            this.pictureBox2.Image = global::Caffeinated.Properties.Resources.SleepEye_Black;
+            this.pictureBox2.Location = new System.Drawing.Point(160, 35);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(259, 28);
+            this.pictureBox3.Image = global::Caffeinated.Properties.Resources.Caffeine_Black_512;
+            this.pictureBox3.Location = new System.Drawing.Point(260, 35);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(153, 138);
+            this.pictureBox4.Image = global::Caffeinated.Properties.Resources.Eye_zzz_Sleep_Black;
+            this.pictureBox4.Location = new System.Drawing.Point(160, 145);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox4.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(259, 138);
+            this.pictureBox5.Image = global::Caffeinated.Properties.Resources.Eye_zzz_Active_Black;
+            this.pictureBox5.Location = new System.Drawing.Point(260, 145);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox5.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(153, 248);
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(160, 255);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox6.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox6.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 9;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(259, 248);
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(260, 255);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox7.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 10;
             this.pictureBox7.TabStop = false;
             // 
@@ -395,8 +418,9 @@
             this.AcceptButton = this.okBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(654, 888);
+            this.ClientSize = new System.Drawing.Size(654, 953);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cancelBtn);

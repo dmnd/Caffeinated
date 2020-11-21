@@ -84,6 +84,11 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReflectedShell.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsForm.cs">
@@ -107,14 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="privacy.md" />
     <None Include="Properties\Settings.settings">
@@ -135,6 +135,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cup-coffee-icon.ico" />
+    <None Include="Resources\SleepEye-Black.png" />
+    <None Include="Resources\Eye-zzz-Active-icon.ico" />
+    <None Include="Resources\Eye-zzz-Sleep-icon.ico" />
+    <None Include="Resources\Eye-zzz-Active-Black.png" />
+    <None Include="Resources\Eye-zzz-Sleep-Black.png" />
+    <None Include="Resources\mug-sleep-icon.ico" />
+    <None Include="Resources\mug-active-icon.ico" />
+    <None Include="Resources\Mug-Active-Black.png" />
+    <None Include="Resources\Mug-Sleep-Black.png" />
     <None Include="Resources\%24this.Icon.ico" />
     <Content Include="Resources\Caffeine-Black-512.png" />
     <None Include="Resources\Caffeine-Black-96.png" />
