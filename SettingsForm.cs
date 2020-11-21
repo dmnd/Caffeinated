@@ -32,6 +32,22 @@ namespace Caffeinated {
             DefaultDurationBox.ContextMenu = durationCM;
 
             setStartupCheckBox();
+            setRadioButtons();
+        }
+
+        private void setRadioButtons() {
+            switch (Settings.Default.Icon)
+            {
+                case "Mug":
+                    mugRDBTN.Checked = true;
+                    break;
+                case "Eye-ZZZ":
+                    eyeZZZRDBTN.Checked = true;
+                    break;
+                default:
+                    defaultRDBTN.Checked = true;
+                    break;
+            }
         }
 
         private void DeleteMI_Click(object sender, EventArgs e)
@@ -172,6 +188,21 @@ namespace Caffeinated {
             Settings.Default.Durations += $",{newDuration}";
 
             CustomDurationTXBX.Text = "";            
+        }
+
+        private void defaultRDBTN_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Icon = "Default";
+        }
+
+        private void eyeZZZRDBTN_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Icon = "Eye-ZZZ";
+        }
+
+        private void mugRDBTN_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Icon = "Mug";
         }
     }
 }

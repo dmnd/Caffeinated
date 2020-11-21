@@ -61,13 +61,25 @@ namespace Caffeinated.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0,15,60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0,15,60,120,480")]
         public string Durations {
             get {
                 return ((string)(this["Durations"]));
             }
             set {
                 this["Durations"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Default")]
+        public string Icon {
+            get {
+                return ((string)(this["Icon"]));
+            }
+            set {
+                this["Icon"] = value;
             }
         }
     }

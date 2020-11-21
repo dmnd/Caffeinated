@@ -278,6 +278,7 @@
             this.defaultRDBTN.Text = "Default";
             this.defaultRDBTN.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.defaultRDBTN.UseVisualStyleBackColor = true;
+            this.defaultRDBTN.Click += new System.EventHandler(this.defaultRDBTN_Click);
             // 
             // eyeZZZRDBTN
             // 
@@ -290,6 +291,7 @@
             this.eyeZZZRDBTN.TabStop = true;
             this.eyeZZZRDBTN.Text = "Eye with zZZ";
             this.eyeZZZRDBTN.UseVisualStyleBackColor = true;
+            this.eyeZZZRDBTN.Click += new System.EventHandler(this.eyeZZZRDBTN_Click);
             // 
             // mugRDBTN
             // 
@@ -302,6 +304,7 @@
             this.mugRDBTN.TabStop = true;
             this.mugRDBTN.Text = "Mug";
             this.mugRDBTN.UseVisualStyleBackColor = true;
+            this.mugRDBTN.Click += new System.EventHandler(this.mugRDBTN_Click);
             // 
             // pictureBox2
             // 

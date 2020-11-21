@@ -74,6 +74,7 @@ namespace Caffeinated {
         private Icon onIcon;
         private Icon offIcon;
         private uint? oldState = null;
+        private bool isActivated = false;
         private Timer timer;
         private SettingsForm settingsForm = null;
         private AboutForm aboutForm = null;
@@ -84,19 +85,14 @@ namespace Caffeinated {
             Application.Run(context);
         }
 
-        public AppContext() {
+        public AppContext()
+        {
             this.components = new Container();
             this.timer = new Timer(components);
             timer.Tick += new EventHandler(timer_Tick);
+            
+            setIcons();
 
-            this.offIcon = new Icon(
-                Properties.Resources.cup_coffee_icon_bw,
-                SystemInformation.SmallIconSize
-            );
-            this.onIcon = new Icon(
-                Properties.Resources.cup_coffee_icon,
-                SystemInformation.SmallIconSize
-            );
             this.notifyIcon = new NotifyIcon(this.components);
 
             setContextMenu();
@@ -108,14 +104,53 @@ namespace Caffeinated {
             // Handle the DoubleClick event to activate the form.
             notifyIcon.MouseClick += new MouseEventHandler(notifyIcon1_Click);
 
-            if (Settings.Default.ActivateAtLaunch) {
+            if (Settings.Default.ActivateAtLaunch)
+            {
                 activate(Settings.Default.DefaultDuration);
             }
-            else {
+            else
+            {
                 deactivate();
             }
-            if (Settings.Default.ShowSettingsAtLaunch) {
+            if (Settings.Default.ShowSettingsAtLaunch)
+            {
                 showSettings();
+            }
+        }
+
+        private void setIcons() {
+            switch (Settings.Default.Icon)
+            {
+                case "Mug":
+                    this.offIcon = new Icon(
+                        Properties.Resources.mug_sleep_icon,
+                        SystemInformation.SmallIconSize
+                    );
+                    this.onIcon = new Icon(
+                        Properties.Resources.mug_active_icon,
+                        SystemInformation.SmallIconSize
+                    );
+                    break;
+                case "Eye-ZZZ":
+                    this.offIcon = new Icon(
+                        Properties.Resources.Eye_zzz_Sleep_icon,
+                        SystemInformation.SmallIconSize
+                    );
+                    this.onIcon = new Icon(
+                        Properties.Resources.Eye_zzz_Active_icon,
+                        SystemInformation.SmallIconSize
+                    );
+                    break;
+                default:
+                    this.offIcon = new Icon(
+                        Properties.Resources.cup_coffee_icon_bw,
+                        SystemInformation.SmallIconSize
+                    );
+                    this.onIcon = new Icon(
+                        Properties.Resources.cup_coffee_icon,
+                        SystemInformation.SmallIconSize
+                    );
+                    break;
             }
         }
 
@@ -180,9 +215,14 @@ namespace Caffeinated {
             settingsForm.Show();
         }
 
-        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e) {
             setContextMenu();
+            setIcons();
+
+            if (isActivated)
+                notifyIcon.Icon = onIcon;
+            else
+                notifyIcon.Icon = offIcon;
         }
 
         void timer_Tick(object sender, EventArgs e) {
@@ -226,6 +266,7 @@ namespace Caffeinated {
                 this.timer.Interval = duration * 60 * 1000;
                 this.timer.Start();
             }
+            this.isActivated = true;
             this.notifyIcon.Icon = onIcon;
             this.notifyIcon.Text = "Caffeinated: sleep not allowed!";
         }
@@ -239,6 +280,7 @@ namespace Caffeinated {
                     ShowError();
                 }
             }
+            this.isActivated = false;
             this.notifyIcon.Icon = offIcon;
             this.notifyIcon.Text = "Caffeinated: sleep allowed";
         }
